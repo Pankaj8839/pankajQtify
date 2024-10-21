@@ -1,0 +1,16 @@
+.hero {
+    background-color: black;
+    height: 270px;
+    display: flex;
+    width:100vw;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+  .heroText {
+    color: white;
+  
+  }
+
+  
