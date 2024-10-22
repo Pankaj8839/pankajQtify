@@ -1,0 +1,20 @@
+.swiper{
+    padding: 10px;
+    position: relative;
+}
+.rightNavigation{
+  cursor: pointer;
+  position:absolute;
+  right:10px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index:10
+}
+.leftNavigation{
+    cursor: pointer;
+    position:absolute;
+    left:10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index:10
+}

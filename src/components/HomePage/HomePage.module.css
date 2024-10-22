@@ -5,3 +5,17 @@
     width: 100vw;
   
 }
+.SongContainer{
+   width:100%;
+    background-color: #121212;
+}
+.titleContainer{
+    display: flex;
+    padding:10px 50px;
+    justify-content: space-between;
+}
+.cardContainer{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px;
+}
