@@ -50,7 +50,7 @@ const HomePage = () => {
         <Box className={styles.titleContainer}>
           <Typography color="white">Top Albums</Typography>
           <Typography color="#34C94B" onClick={toggleCarousel} className={styles.textbutton}>
-            {showCarousel ? "Show All" : "Collapse"}
+            {showCarousel ? "Show all" : "Collapse"}
           </Typography>
         </Box>
         <Box className={styles.cardContainer}>
@@ -73,7 +73,7 @@ const HomePage = () => {
         <Box className={styles.titleContainer}>
           <Typography color="white">New Albums</Typography>
           <Typography color="#34C94B" onClick={toggleCarouselInNewAlbum} className={styles.textbutton}>
-            {showCarouselInNewAlbum ? "Show All" : "Collapse"}
+            {showCarouselInNewAlbum ? "Show all" : "Collapse"}
           </Typography>
         </Box>
         <Box className={styles.cardContainer}>
