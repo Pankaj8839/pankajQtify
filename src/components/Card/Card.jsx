@@ -7,7 +7,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import styles from "./Card.module.css"
 
-const SongCard = ({ image, numberOfFollowers, albumName }) => {
+const SongCard = ({ image, numberOfFollowers, albumName, displayLikes ,numberOfLikes}) => {
     return (
         <Box>
             <Card className={styles.card}>
@@ -18,9 +18,13 @@ const SongCard = ({ image, numberOfFollowers, albumName }) => {
                 />
                 <CardContent className={styles.cardContent}>
                     <Box >
-                        <Typography className={styles.cardText}>
-                            {numberOfFollowers} Followers
-                        </Typography>
+                        {displayLikes ?
+                            <Typography className={styles.cardText}>
+                                {numberOfLikes} Likes
+                            </Typography> :
+                            <Typography className={styles.cardText}>
+                                {numberOfFollowers} Followers
+                            </Typography>}
                     </Box>
                 </CardContent>
             </Card>

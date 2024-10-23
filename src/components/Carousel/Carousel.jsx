@@ -1,8 +1,7 @@
-import React, {useEffect, useRef}from 'react';
+import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import left from "../../assets/left.svg";
-import right from "../../assets/right.svg";
+
 import SongCard from '../Card/Card';
 import style from "./Carousel.module.css";
 import 'swiper/css';
@@ -20,9 +19,7 @@ import 'swiper/css/scrollbar';
 
 
 
-const Carousel = ({ items }) => {
-  ;
-   
+const Carousel = ({ items,displayLikes }) => {
 
   return (
    
@@ -39,7 +36,7 @@ const Carousel = ({ items }) => {
         <CarouselRightNavigation/>
      {items.map((item) => (
           <SwiperSlide key={item.id} >
-            <SongCard image={item.image} numberOfFollowers={item.follows} albumName={item.title}/>
+            <SongCard image={item.image} numberOfFollowers={item.follows} albumName={item.title} displayLikes={displayLikes ? true : false} numberOfLikes={item.likes}/>
           </SwiperSlide>
         ))}
    </Swiper>

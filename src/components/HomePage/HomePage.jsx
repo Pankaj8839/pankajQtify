@@ -6,6 +6,7 @@ import { Box, Typography } from "@mui/material";
 import styles from "./HomePage.module.css";
 import Carousel from "../Carousel/Carousel";
 import Grid from '@mui/material/Grid2'
+import LabTab from '../Tab/Tab';
 const HomePage = () => {
   const [songArray, setSongArray] = useState([]);
   const [songNewArray, setSongNewArray] = useState([]);
@@ -90,6 +91,7 @@ const HomePage = () => {
           )}
         </Box>
       </Box>
+      <LabTab/>
     </Box>
   );
 };
