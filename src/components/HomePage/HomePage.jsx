@@ -8,23 +8,37 @@ import Carousel from "../Carousel/Carousel";
 import Grid from '@mui/material/Grid2'
 const HomePage = () => {
   const [songArray, setSongArray] = useState([]);
+  const [songNewArray, setSongNewArray] = useState([]);
   const [showCarousel, setShowCarousel] = useState(false);
+  const [showCarouselInNewAlbum, setShowCarouselInNewAlbum] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        let response = await fetch("https://qtify-backend-labs.crio.do/albums/top");
-        let data = await response.json();
-        setSongArray(data);
+        const [topAlbumsResponse, newAlbumsResponse] = await Promise.all([
+          fetch("https://qtify-backend-labs.crio.do/albums/top"),
+          fetch("https://qtify-backend-labs.crio.do/albums/new")
+        ]);
+        
+        const topAlbumsData = await topAlbumsResponse.json();
+        const newAlbumsData = await newAlbumsResponse.json();
+  
+        setSongArray(topAlbumsData);
+        setSongNewArray(newAlbumsData);
       } catch (err) {
         console.log(err);
       }
     };
+  
     fetchData();
   }, []);
 
   const toggleCarousel = () => {
     setShowCarousel(!showCarousel);
+  };
+
+  const toggleCarouselInNewAlbum = () => {
+    setShowCarouselInNewAlbum(!showCarouselInNewAlbum);
   };
 
   return (
@@ -44,6 +58,29 @@ const HomePage = () => {
           ) : (
             <Grid container spacing={2}>
             {songArray.map((item, index) => (
+              <Grid key={index} size={2}>
+                <SongCard image={item.image} numberOfFollowers={item.follows} albumName={item.title}/>
+                </Grid>
+                
+            ))}
+            </Grid>
+          )}
+        </Box>
+      </Box>
+
+      <Box className={styles.SongContainer}>
+        <Box className={styles.titleContainer}>
+          <Typography color="white">New Albums</Typography>
+          <Typography color="#34C94B" onClick={toggleCarouselInNewAlbum} className={styles.textbutton}>
+            {showCarouselInNewAlbum ? "Show All" : "Collapse"}
+          </Typography>
+        </Box>
+        <Box className={styles.cardContainer}>
+          {showCarouselInNewAlbum ? (
+            <Carousel items={songNewArray} />
+          ) : (
+            <Grid container spacing={2}>
+            {songNewArray.map((item, index) => (
               <Grid key={index} size={2}>
                 <SongCard image={item.image} numberOfFollowers={item.follows} albumName={item.title}/>
                 </Grid>
