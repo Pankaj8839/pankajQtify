@@ -10,8 +10,8 @@ import LabTab from '../Tab/Tab';
 const HomePage = () => {
   const [songArray, setSongArray] = useState([]);
   const [songNewArray, setSongNewArray] = useState([]);
-  const [showCarousel, setShowCarousel] = useState(false);
-  const [showCarouselInNewAlbum, setShowCarouselInNewAlbum] = useState(false);
+  const [showCarousel, setShowCarousel] = useState(true);
+  const [showCarouselInNewAlbum, setShowCarouselInNewAlbum] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
