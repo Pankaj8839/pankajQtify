@@ -19,3 +19,6 @@
     flex-wrap: wrap;
     padding: 50px;
 }
+.textbutton{
+    cursor: pointer;
+}
