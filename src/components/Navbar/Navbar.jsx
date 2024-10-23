@@ -11,7 +11,7 @@ function Navbar({ searchData }) {
 
   return (
     <Box className={styles.navbar} >
-      {/* <Box className={styles.content}> */}
+      <Box className={styles.content}>
       <Link to="/">
         <Logo />
       </Link>
@@ -20,7 +20,7 @@ function Navbar({ searchData }) {
         searchData={searchData}
       />
        <Button text="Give Feeback"/>
-       {/* </Box> */}
+       </Box>
     </Box>
   );
 }
