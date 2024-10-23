@@ -13,7 +13,7 @@ function Navbar({ searchData }) {
         <Logo className={styles.logo}/>
       </Link>
       <Search
-        placeholder="Search a song"
+        placeholder="Search a song of your choice"
         searchData={searchData}
       />
       <Button text="Give Feedback" className={styles.button}/>
