@@ -40,7 +40,7 @@ const HomePage = () => {
 
         </Box>
         <Box className={styles.cardContainer}>
-         <Carousel items={songArray}/>
+         {/* <Carousel items={songArray}/> */}
         </Box>
       </Box>
     </Box>
