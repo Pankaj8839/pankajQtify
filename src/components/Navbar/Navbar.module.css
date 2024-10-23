@@ -4,7 +4,7 @@
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content:center
+    justify-content:space-around
  
 }
 .content {
@@ -14,3 +14,11 @@
     height: 100%;
     width: 95%;
 } 
+
+.logo {
+    margin-left: 100px;
+}
+
+.button{
+    margin-right: 100px;
+}

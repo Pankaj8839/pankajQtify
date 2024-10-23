@@ -13,13 +13,13 @@ function Navbar({ searchData }) {
     <Box className={styles.navbar} >
       {/* <Box className={styles.content}> */}
       <Link to="/">
-        <Logo />
+        <Logo className={styles.logo}/>
       </Link>
       <Search
-        placeholder="search"
+        placeholder="Search a song"
         searchData={searchData}
       />
-       <Button text="Give Feeback"/>
+       <Button text="Give Feeback" className={styles.button}/>
        {/* </Box> */}
     </Box>
   );
